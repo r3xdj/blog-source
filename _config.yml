@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: R3X DJ's Blog
-subtitle: 'Math, Cyber & Computer Science'
-description: ''
+title: R3X's Blog
+subtitle: 'CTF / Math / CS Notes'
+description: '記錄資安、數學與程式學習的地方'
 keywords:
 author: R3X DJ
 language: zh-TW
-timezone: ''
+timezone: 'Asia/Taipei'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
