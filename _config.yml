@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: R3X DJ's Blog
+subtitle: 'Math, Cyber & Computer Science'
 description: ''
 keywords:
 author: R3X DJ
-language: zh
+language: zh-TW
 timezone: ''
 
 # URL
@@ -102,4 +102,7 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+    type: git
+    repo: https://github.com/r3xdj/r3xdj.github.io.git
+    branch: main
+    message: "deploy: {{ now('YYYY-MM-DD HH:mm:ss') }}"
