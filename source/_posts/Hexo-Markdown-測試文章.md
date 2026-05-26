@@ -211,12 +211,12 @@ $$
 ## Markdown 圖片語法
 
 ```markdown
-![avatar](/img/icy_star.png)
+![avatar](icy_star.png)
 ```
 
 實際效果：
 
-![avatar](/img/icy_star.png)
+![avatar](icy_star.png)
 
 ---
 
