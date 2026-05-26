@@ -18,7 +18,12 @@ nav:
   fixed: false
 
 menu:
-  # Home: / || fas fa-home
+  Home: / || fas fa-home
+  Archives: /archives/ || fas fa-archive
+  Categories: /categories/ || fas fa-folder-open
+  Tags: /tags/ || fas fa-tags
+  Projects: /projects/ || fas fa-code
+  About: /about/ || fas fa-user
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
@@ -64,7 +69,7 @@ avatar:
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img:
+default_top_img: /img/cover.jpg
 
 # The banner image of index page
 index_img:
@@ -102,8 +107,8 @@ cover:
   aside_enable: true
   archives_enable: true
   # When cover is not set, the default cover is displayed
-  default_cover:
-    # - xxx.jpg
+  default_cover: 
+    - /img/cover.jpg
 
 # Replace Broken Images
 error_img:
@@ -286,9 +291,7 @@ aside:
   card_author:
     enable: true
     description: |
-      Hi，我是R3X DJ。
-      喜歡數學、資安與寫作。
-
+      Hi，我是R3X DJ。<br/>喜歡數學、資安與寫作。
     button:
       enable: true
       icon: fab fa-github
@@ -457,7 +460,7 @@ busuanzi:
 math:
   # Choose: mathjax, katex
   # Leave it empty if you don't need math
-  use:
+  use: katex
   per_page: true
   hide_scrollbar: false
 
@@ -469,7 +472,7 @@ math:
 
   katex:
     # Enable the copy KaTeX formula
-    copy_tex: false
+    copy_tex: true
 
 # --------------------------------------
 # Search
