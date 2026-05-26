@@ -9,7 +9,7 @@ layout: about
 Hi，我是 R3X DJ  
 喜歡數學、資安與寫作。
 曾就讀 HSNU 1612
-現為 NTU CSIE 學生
+即將成為 NTU CSIE 學生
 
 ## 🧠 Skill
 
