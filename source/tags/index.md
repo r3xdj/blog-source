@@ -1,4 +1,6 @@
 ---
-title: tags
-date: 2026-05-26 09:55:04
+title: Tags
+date: 2026-05-26
+type: tags
+layout: tags
 ---
