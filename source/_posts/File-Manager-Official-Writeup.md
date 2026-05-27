@@ -7,8 +7,9 @@ tags:
 categories:
   - Cyber
   - CTF Writeup
-cover:
+date: 2026-05-27 23:39:12
 ---
+
 
 # 題目資訊
 
@@ -685,24 +686,24 @@ Flag Format: ZLCSC{*}
 import os, hashlib, time, sys, subprocess
 
 def init():
-	sys.stdout.reconfigure(line_buffering=True)
-	sys.stderr.reconfigure(line_buffering=True)
-	os.system("stty -echo")
+    sys.stdout.reconfigure(line_buffering=True)
+    sys.stderr.reconfigure(line_buffering=True)
+    os.system("stty -echo")
 
 def new_welcome():
-	print("Welcome to the file manager 3!")
-	print("I can't believe it... my file manager got pwned TWICE already.\nSeriously, how did you guys even do that?\n")
-	print("Anyway, I've fixed everything this time.\nThere's now a proper permission authentication system, and deleted flag.txt at very start,\nso you definitely can't access files you shouldn't. :)\n")
-	print("Also, great news!\nThe backup restore feature is finally here (beta version)!")
-	print("Enjoy the new version!\n")
+    print("Welcome to the file manager 3!")
+    print("I can't believe it... my file manager got pwned TWICE already.\nSeriously, how did you guys even do that?\n")
+    print("Anyway, I've fixed everything this time.\nThere's now a proper permission authentication system, and deleted flag.txt at very start,\nso you definitely can't access files you shouldn't. :)\n")
+    print("Also, great news!\nThe backup restore feature is finally here (beta version)!")
+    print("Enjoy the new version!\n")
 
-	print("Hint 1: Is there any difference in 'check_filename' function?")
-	print("Hint 2: You may want to see the 'Dockerfile' first\n")
+    print("Hint 1: Is there any difference in 'check_filename' function?")
+    print("Hint 2: You may want to see the 'Dockerfile' first\n")
 
 def banner():
-	print("="*30)
-	print("Welcome to the file manager!")
-	print("="*30)
+    print("="*30)
+    print("Welcome to the file manager!")
+    print("="*30)
 
 check_filename = lambda fn, files: any(c in fn for c in " /\\:*?\"<>|") or len(fn) > 255 or os.path.basename(fn) in files
 file_exists = lambda fn: os.path.exists(fn)
@@ -727,137 +728,137 @@ def restore_priv():
     is_root = True
 
 def readfile(fn):
-	if check_filename(fn, [""]): print("Please enter a valid filename without spaces or special characters, and less than 255 characters"); return 1
-	if check_filename(fn, ["backup.tar"]):
-		print("Backup file is not a text file and cannot be read!"); return 1
-	print(f"[*] Auditing access to {fn}...")
-	time.sleep(0.1)
-	if not file_exists(fn):
-		print("File does not exist!")
-		return 1
-	else:
-		with open(fn, "r") as f:
-			print("Here is the content of the file:")
-			print(f.read())
-		
+    if check_filename(fn, [""]): print("Please enter a valid filename without spaces or special characters, and less than 255 characters"); return 1
+    if check_filename(fn, ["backup.tar"]):
+        print("Backup file is not a text file and cannot be read!"); return 1
+    print(f"[*] Auditing access to {fn}...")
+    time.sleep(0.1)
+    if not file_exists(fn):
+        print("File does not exist!")
+        return 1
+    else:
+        with open(fn, "r") as f:
+            print("Here is the content of the file:")
+            print(f.read())
+
 def get_hash(filename):
-	sha256 = hashlib.sha256
-	file = open(filename, "rb").read()
-	return sha256(file)
-		
+    sha256 = hashlib.sha256
+    file = open(filename, "rb").read()
+    return sha256(file)
+
 def calhash(fn):
-	if not file_exists(fn):
-		print("File does not exist!")
-		return 1
-	else:
-		print("Calculating hash...")
-		print("The hash of the file is: " + str(get_hash(fn).hexdigest()))
+    if not file_exists(fn):
+        print("File does not exist!")
+        return 1
+    else:
+        print("Calculating hash...")
+        print("The hash of the file is: " + str(get_hash(fn).hexdigest()))
 
 def create_file_banner():
-	print("You will be asked for line (<=10), text and filename. The text will be written into the file for the number of lines you specified.")
-	print("For example, if you enter 3 for line, and 'hello' for text, and 'text.txt' for filename, the file 'text.txt' will contain:")
-	print("hello")
-	print("hello")
-	print("hello")
-	print("And remember, the filename should not contain any spaces or special characters such as '/', '\\', ':', '*', '?', '\"', '<', '>', '|'.")
-	print("And the filename should not be too long (less than 255 characters).")
-	print("Also, it can't be 'main.py' or 'flag.txt' to avoid breaking the program.")
-	print("Caution: If you create a file with the same name as an existing file, it will overwrite the existing file!")
+    print("You will be asked for line (<=10), text and filename. The text will be written into the file for the number of lines you specified.")
+    print("For example, if you enter 3 for line, and 'hello' for text, and 'text.txt' for filename, the file 'text.txt' will contain:")
+    print("hello")
+    print("hello")
+    print("hello")
+    print("And remember, the filename should not contain any spaces or special characters such as '/', '\\', ':', '*', '?', '\"', '<', '>', '|'.")
+    print("And the filename should not be too long (less than 255 characters).")
+    print("Also, it can't be 'main.py' or 'flag.txt' to avoid breaking the program.")
+    print("Caution: If you create a file with the same name as an existing file, it will overwrite the existing file!")
 
 def createfile():
-	create_file_banner()
-	line = input("line: ")
-	if not line.isdigit() or int(line) <= 0:
-		print("Please enter a valid positive integer for line.")
-		print("File creation failed!")
-		return 1
-	elif int(line) > 10:
-		print("Please enter a smaller number for line (less than 10).")
-		print("File creation failed!")
-		return 1
-	else:
-		line = int(line)
-	text = ""
-	for i in range(line):
-		text += input(f"line {i+1}: ") + "\n"
-	while True:
-		filename = input("filename: ")
-		if check_filename(filename, ["main.py", "flag.txt"]):
-			print("Please enter a valid filename without spaces or special characters, and less than 255 characters, and not 'main.py' or 'flag.txt'.")
-		else:
-			break
-	with open(filename, "w") as f:
-		f.write(text)
-		print("File created successfully!")
+    create_file_banner()
+    line = input("line: ")
+    if not line.isdigit() or int(line) <= 0:
+        print("Please enter a valid positive integer for line.")
+        print("File creation failed!")
+        return 1
+    elif int(line) > 10:
+        print("Please enter a smaller number for line (less than 10).")
+        print("File creation failed!")
+        return 1
+    else:
+        line = int(line)
+    text = ""
+    for i in range(line):
+        text += input(f"line {i+1}: ") + "\n"
+    while True:
+        filename = input("filename: ")
+        if check_filename(filename, ["main.py", "flag.txt"]):
+            print("Please enter a valid filename without spaces or special characters, and less than 255 characters, and not 'main.py' or 'flag.txt'.")
+        else:
+            break
+    with open(filename, "w") as f:
+        f.write(text)
+        print("File created successfully!")
 
 def backup():
-	print("Creating backup...")
-	if file_exists("backup.tar"):
-		print("Backup file already exists, it will be overwritten!")
-		os.remove("backup.tar")
-	try:
-		subprocess.run(["tar", "-cf", "backup.tar", "--exclude=flag.txt", "--exclude=main.py", "--", "."])
-		print("Backup created successfully!")
-	except Exception as e:
-		print(f"An error occurred while creating backup: {e}")
+    print("Creating backup...")
+    if file_exists("backup.tar"):
+        print("Backup file already exists, it will be overwritten!")
+        os.remove("backup.tar")
+    try:
+        subprocess.run(["tar", "-cf", "backup.tar", "--exclude=flag.txt", "--exclude=main.py", "--", "."])
+        print("Backup created successfully!")
+    except Exception as e:
+        print(f"An error occurred while creating backup: {e}")
 
 def restore():
-	ch = input("Are you sure? this might replace existed files? type \"yes\" to continue: ")
-	if not ch.lower() == "yes": return 1
-	print("Restoring backup...")
-	if not file_exists("backup.tar"):
-		print("Backup file does not exist!")
-		return 1
-	try:
-		subprocess.run(["tar", "-xf", "backup.tar"])
-		print("Backup restored successfully!")
-	except Exception as e:
-		print(f"An error occurred while restoring backup: {e}")
+    ch = input("Are you sure? this might replace existed files? type \"yes\" to continue: ")
+    if not ch.lower() == "yes": return 1
+    print("Restoring backup...")
+    if not file_exists("backup.tar"):
+        print("Backup file does not exist!")
+        return 1
+    try:
+        subprocess.run(["tar", "-xf", "backup.tar"])
+        print("Backup restored successfully!")
+    except Exception as e:
+        print(f"An error occurred while restoring backup: {e}")
 
 def run():
-	global is_root
-	auth = open("flag.txt", "r")
-	os.remove("flag.txt")
-	drop_priv()
-	while True:
-		banner()
-		print("1. read file")
-		print("2. calculate hash")
-		print("3. create file")
-		print("4. backup (Won't backup flag.txt, main.py)")
-		print("5. restore backup (beta)")
-		print("6. Get root" if is_root == False else "6. Drop priv.")
-		print("999. exit")
-		ch = input(">> ")
-		if ch == "1":
-			fn = input("filename: ")
-			readfile(fn)
-		elif ch == "2":
-			fn = input("filename: ")
-			calhash(fn)
-		elif ch == "3":
-			createfile()
-		elif ch == "4":
-			backup()
-		elif ch == "5":
-			restore()
-		elif ch == "6":
-			if is_root == False:
-				auth_key = input("Enter the whole flag as the auth key >> ")
-				auth.seek(0)
-				if auth_key == auth.read(): restore_priv(); print("You're now root!")
-				else: print("auth key error.")
-			else:
-				drop_priv()
-		elif ch == "999":
-			print("Thank you for using the file manager!")
-			break
+    global is_root
+    auth = open("flag.txt", "r")
+    os.remove("flag.txt")
+    drop_priv()
+    while True:
+        banner()
+        print("1. read file")
+        print("2. calculate hash")
+        print("3. create file")
+        print("4. backup (Won't backup flag.txt, main.py)")
+        print("5. restore backup (beta)")
+        print("6. Get root" if is_root == False else "6. Drop priv.")
+        print("999. exit")
+        ch = input(">> ")
+        if ch == "1":
+            fn = input("filename: ")
+            readfile(fn)
+        elif ch == "2":
+            fn = input("filename: ")
+            calhash(fn)
+        elif ch == "3":
+            createfile()
+        elif ch == "4":
+            backup()
+        elif ch == "5":
+            restore()
+        elif ch == "6":
+            if is_root == False:
+                auth_key = input("Enter the whole flag as the auth key >> ")
+                auth.seek(0)
+                if auth_key == auth.read(): restore_priv(); print("You're now root!")
+                else: print("auth key error.")
+            else:
+                drop_priv()
+        elif ch == "999":
+            print("Thank you for using the file manager!")
+            break
 
 
 if __name__ == "__main__":
-	init()
-	new_welcome()
-	run()
+    init()
+    new_welcome()
+    run()
 
 # Bonus question: What unexpected solution would occur if auth.seek(0) were not used?
 ```
@@ -955,11 +956,9 @@ to use it.
 
 問題是要怎麼建立出檔案連結呢？我們又不能跑`ln`指令。
 
-答案是
+答案是，我們可以先用`3. create file`構造一個`backup.tar`，然後再用`5. restore backup (beta)`將其解壓縮。因為tar解壓縮可以解出檔案連結。
 
-構造一個tar file出來。
-
-可以用tarfile跟io這兩個模組
+我們使用tarfile跟io這兩個模組，腳本如下：
 
 ```python
 import tarfile, io
@@ -972,7 +971,9 @@ with tarfile.open(fileobj=out, mode="w") as tar:
 tar_data = [out.getvalue()]
 ```
 
+這個腳本會建立一個tar_data，其中的檔案包含是一個名稱為`a`，且連結指向`/proc/self/fd/3`的檔案。
 
+如此，我們只要將構造完的tar數據放進`backup.tar`，然後解壓縮，再用`1. read file`讀取檔案`a`即可。
 
 ### 寫 exploit
 
@@ -1060,6 +1061,12 @@ else: print("哭了，不知道為什麼沒有Flag")
 p.close()
 ```
 
+於是可以得到Flag：
+
+```
+ZLCSC{FD-3_T1mE_1$_7h3_ch4rm}
+```
+
 ### Bonus Question
 
 檔案最後一行用註釋寫了一個Bonus Question
@@ -1068,6 +1075,44 @@ p.close()
 Bonus question: What unexpected solution would occur if auth.seek(0) were not used?
 ```
 
+我們看到第161~168行，也就是`6. Get root`的程式碼：
 
+```python
+elif ch == "6":
+	if is_root == False:
+		auth_key = input("Enter the whole flag as the auth key >> ")
+		auth.seek(0)
+		if auth_key == auth.read(): restore_priv(); print("You're now root!")
+		else: print("auth key error.")
+	else:
+		drop_priv()
+```
+
+由於每次讀完檔案後，檔案的讀寫指針會移動到檔案末端，所以需要`auth.seek(0)`將指針重新移動回檔案開頭。
+如果沒有這樣做，那在下一次讀檔案的時候，就會從讀寫指針的位置(文件末)開始讀，那就是什麼都沒讀到，於是`auth_key`是空字串，如此我們只要直接`6. Get root`然後Enter權限就提升成root了。(雖然對解這題沒幫助就是了XD)
 
 # 心得與後記
+
+這是我第一次自己出CTF題目，所以也有滿多心得的。
+
+## 出題緣由
+
+會出這些CTF題目是因為我朋友EH，中崙資訊研究社社長，說他打算給他們社團弄個ctfd，問我有沒有興趣出題。剛好我本身早已有想過要自行設計CTF題目，只是一直沒有開始，而這恰好是一個機會。雖然我不知道他們後來那個社團的ctfd運作得如何，有多少人去解題，但至少我題目已經出出來了嘛(是這樣說嗎XD)
+
+## 靈感來源
+
+這三題的各個考點的靈感各有來源，以下列出：
+- File Manager 1
+  - Python module hijack：我有一次解CTF題目用python寫exploit時，把檔案名稱命名成`jwt.py`，剛好script裡又import了`jwt`這個模組，導致exploit錯誤。
+- File Manager 2
+  - TOCTOU：之前解picoCTF上的tic-tac這題題目時學習到了TOCTOU，覺得很酷，便一直印象深刻。
+  - Tar Argument Injection：這個洞是AI告訴我的，印象中我本來也沒打算考這個，是AI幫我驗程式碼的時候說這裡有洞。
+- File Manager 3
+  - Tar檔案構造：之前在網路上看到一題 UIUCTF 2025 題目：[Executing arbitrary Python code from a comment](https://www.hacktron.ai/blog/python-zip-confusion/)，便是要構造一個惡意zip檔案。這種手動構造檔案的手法讓我感到耳目一新。
+  - /proc/self/fd/3：之前都說python開檔案要記得關，我便好奇如果沒關會造成什麼資安漏洞。
+
+## 備註
+
+出題跟寫exploit過程中用到了ChatGPT、Gemini還有VSCode裡的Copilot。
+即便如此，我還是學到了很多先前未曾想過的漏洞。也理解了
+不過Instancer我還是不知道是怎麼搞的XD那個docker-compose.yml是AI幫我寫的。當然其中還是遇到很多問題(比如輸入文字的反射問題之類的)，就要再多問問、自己查更多資料，以及看別人的CTF chal中是怎麼寫的。
