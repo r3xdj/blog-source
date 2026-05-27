@@ -23,7 +23,7 @@ cover:
 輕鬆打，學生賽區第23名
 ## Welcome
 ### Welcome to THJCC CTF
-![image](https://hackmd.io/_uploads/H1oZgj0dbg.png)!
+![image](https://hackmd.io/_uploads/H1oZgj0dbg.png)
 誰跟你F12，我瞪眼法求Flag
 ```
 THJCC{We1c0m3-tO-tHjcC-c7F_2O26}

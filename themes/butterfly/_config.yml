@@ -37,7 +37,7 @@ code_blocks:
   theme: light
   macStyle: false
   # Code block height limit (unit: px)
-  height_limit: false
+  height_limit: 300
   word_wrap: false
 
   # Toolbar
@@ -200,14 +200,14 @@ toc:
   post: true
   page: false
   number: true
-  expand: true
+  expand: false
   # Only for post
   style_simple: false
   scroll_percent: true
 
 post_copyright:
   enable: true
-  decode: false
+  decode: true
   author_href:
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -299,7 +299,7 @@ aside:
       link: https://github.com/r3xdj
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: Welcome to my Blog!
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -308,7 +308,7 @@ aside:
     sort: date
     sort_order:
   card_newest_comments:
-    enable: false
+    enable: true
     sort_order:
     limit: 6
     # Unit: mins, save data to localStorage
@@ -428,7 +428,7 @@ anchor:
 photofigcaption: false
 
 copy:
-  enable: true
+  enable: false
   # Add the copyright information after copied content
   copyright:
     enable: false
