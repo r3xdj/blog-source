@@ -26,7 +26,7 @@ layout: page
 ### 🎲 Misc
 
 #### 📁 File Manager Series (Total: 3 Challenges)
-一個圍繞著檔案管理系統設計的 Misc 題組，考驗解題者對系統邏輯與特定邊界條件的敏銳度。
+一個圍繞著檔案管理系統設計的 Misc 題組。
 - **Challenge Repo:** [r3xdj/file-manager-challs](https://github.com/r3xdj/file-manager-challs)
 - **題目狀態:** - 🛠️ Challenge: **Released**
   - 📝 Official Writeup: **In Progress**
@@ -47,6 +47,6 @@ layout: page
 ### 🔐 Crypto
 
 #### 🧮 Eisenstein's RSA
-將傳統的公鑰密碼學體系延伸至非傳統代數結構中的進階密碼學挑戰。
+在非整數環上的 RSA 題目
 - **題目狀態:** 🧪 **Under Development**
-- **題目簡介:** 本題嘗試將標準的 RSA 加密演算法移植到**艾森斯坦整數（Eisenstein Integers, $\mathbb{Z}[\omega]$）** 的複數平面的格點結構上。解題者需要探討在此代數結構下，傳統質因數分解與相關攻擊手法（如特定格基減少演算法或同餘性質）的質變與適用性。
+- **難度:** Hard
