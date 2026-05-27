@@ -14,7 +14,8 @@ tags:
 categories:
   - Cyber
   - CTF Writeup
-cover:
+cover: /img/THJCC.png
+top_img: /img/THJCC.png
 ---
 
 # THJCC 2026 writeups

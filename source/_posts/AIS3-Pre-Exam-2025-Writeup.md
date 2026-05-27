@@ -11,7 +11,8 @@ tags:
 categories: 
   - Cyber
   - CTF Writeup
-cover:
+cover: /img/AIS3_2025.jpg
+top_img: /img/AIS3_2025.jpg
 ---
 
 # AIS3 Pre-Exam 2025

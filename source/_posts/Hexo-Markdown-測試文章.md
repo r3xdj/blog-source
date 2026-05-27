@@ -35,8 +35,11 @@ top_img: /img/cover.jpg
 # 📌 標題測試
 
 # H1 標題
+
 ## H2 標題
+
 ### H3 標題
+
 #### H4 標題
 
 ---
@@ -51,7 +54,7 @@ top_img: /img/cover.jpg
 - `inline code`
 
 > 這是一段引用文字。
->
+> 
 > 可以有多行。
 
 ---
@@ -191,11 +194,11 @@ $$
 
 # 📊 表格測試
 
-| Name | Type | Difficulty |
-|---|---|---|
-| RSA | Crypto | Medium |
-| Buffer Overflow | Pwn | Hard |
-| SQL Injection | Web | Easy |
+| Name            | Type   | Difficulty |
+| --------------- | ------ | ---------- |
+| RSA             | Crypto | Medium     |
+| Buffer Overflow | Pwn    | Hard       |
+| SQL Injection   | Web    | Easy       |
 
 ---
 
@@ -223,7 +226,7 @@ $$
 # 📎 引用與註解
 
 > 「數學是人類精神自由的象徵。」
->
+> 
 > — David Hilbert
 
 ---
