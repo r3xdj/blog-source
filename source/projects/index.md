@@ -41,7 +41,7 @@ layout: page
 考驗在 `png` 圖片的長、寬與 CRC 循環冗餘校驗都被修改後，如何還原出原始正確長寬。
 - **Challenge Repo:** [r3xdj/FindMySize-chall](https://github.com/r3xdj/FindMySize-chall)
 - **題目狀態:** - 🛠️ Challenge: **Released**
-  - 📝 Official Writeup: **In Progress**
+  - 📝 Official Writeup: [Find My Size Official Writeup | R3X's Blog](http://r3xdj.github.io/blog/2026/05/28/Find-My-Size-Official-Writeup/)
 - **難度：** Medium
 
 ### 🔐 Crypto
