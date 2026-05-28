@@ -8,7 +8,8 @@ tags:
 categories:
   - Cyber
   - CTF Writeup
-cover:
+cover: /img/picoCTF.png
+top_img: /img/picoCTF.png
 ---
 
 參考影片：[PicoCTF 2022 Forensics

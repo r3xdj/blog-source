@@ -7,6 +7,8 @@ tags:
   - CTF
   - Kali Linux
 description: 在Kali Linux上安裝/設定CTF常用的工具
+cover: /img/Kali.jpg
+top_img: /img/Kali.jpg
 ---
 
 # Kali Linux Setup for CTF

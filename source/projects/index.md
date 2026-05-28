@@ -29,7 +29,7 @@ layout: page
 一個圍繞著檔案管理系統設計的 Misc 題組。
 - **Challenge Repo:** [r3xdj/file-manager-challs](https://github.com/r3xdj/file-manager-challs)
 - **題目狀態:** - 🛠️ Challenge: **Released**
-  - 📝 Official Writeup: **In Progress**
+  - 📝 Official Writeup: [File Manager Official Writeup | R3X's Blog](https://r3xdj.github.io/blog/2026/05/27/File-Manager-Official-Writeup/)
 - **難度：**
   - **File Manager 1:** Easy
   - **File Manager 2:** Hard

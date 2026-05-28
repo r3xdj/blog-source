@@ -8,7 +8,8 @@ tags:
 categories:
   - Cyber
   - CTF Writeup
-cover:
+cover: /img/picoCTF.png
+top_img: /img/picoCTF.png
 ---
 
 # buffer overflow 0
