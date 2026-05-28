@@ -37,7 +37,7 @@ code_blocks:
   theme: light
   macStyle: false
   # Code block height limit (unit: px)
-  height_limit: 300
+  height_limit: 450
   word_wrap: false
 
   # Toolbar
@@ -125,9 +125,9 @@ post_meta:
   # Home Page
   page:
     # Choose: created / updated / both
-    date_type: created
+    date_type: updated
     # Choose: date / relative
-    date_format: date
+    date_format: relative
     categories: true
     tags: false
     label: true
@@ -155,7 +155,7 @@ index_top_img_height:
 
 # The subtitle on homepage
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect
   effect: true
   # Customize typed.js
@@ -170,7 +170,7 @@ subtitle:
   # 3 - jinrishici.com
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
-  sub:
+  sub: CTF / Math / CS Notes
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -244,7 +244,7 @@ related_post:
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
-post_pagination: 1
+post_pagination: 2
 
 # Displays outdated notice for a post
 noticeOutdate:
@@ -263,7 +263,7 @@ noticeOutdate:
 # --------------------------------------
 footer:
   nav:
-  owner:
+  owner: 
     enable: true
     since: 2025
   # Copyright of theme and framework
@@ -303,7 +303,7 @@ aside:
   card_recent_post:
     enable: true
     # If set 0 will show all
-    limit: 5
+    limit: 3
     # Sort: date / updated
     sort: date
     sort_order:
@@ -374,7 +374,7 @@ translate:
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
-  defaultEncoding: 2
+  defaultEncoding: 1
   # Time delay
   translateDelay: 0
   # The text of the button when the language is Simplified Chinese
@@ -394,7 +394,7 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: false
+  autoChangeMode: 1
   # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
   start:
   end:
@@ -428,7 +428,7 @@ anchor:
 photofigcaption: false
 
 copy:
-  enable: false
+  enable: true
   # Add the copyright information after copied content
   copyright:
     enable: false
@@ -436,7 +436,7 @@ copy:
 
 # Need to install the hexo-wordcount plugin
 wordcount:
-  enable: false
+  enable: true
   # Display the word count of the article in post meta
   post_wordcount: true
   # Display the time to read the article in post meta
