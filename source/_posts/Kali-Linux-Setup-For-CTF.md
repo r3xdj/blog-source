@@ -1,6 +1,7 @@
 ---
 title: Kali Linux Setup For CTF
-date: 2026-05-26 11:20:48
+date: 2025-04-06 07:54:17
+updated: 2025-02-13 11:20:00
 categories: 
   - Cyber
 tags:
