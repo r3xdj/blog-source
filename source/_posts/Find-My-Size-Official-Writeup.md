@@ -13,7 +13,6 @@ cover: FIND_MY_SIZE_origin.png
 top_img: FIND_MY_SIZE_origin.png
 ---
 
-
 # 題目資訊
 
 - **Challenge Repo:** [r3xdj/FindMySize-chall](https://github.com/r3xdj/FindMySize-chall)

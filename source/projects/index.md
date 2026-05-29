@@ -66,4 +66,4 @@ layout: page
   
   - 📝 Official Writeup: ✒️**Writing**
 
-- **難度:** Hard
+- **難度:** Medium
