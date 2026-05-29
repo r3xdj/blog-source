@@ -118,3 +118,7 @@ deploy:
     repo: https://github.com/r3xdj/r3xdj.github.io.git
     branch: main
     message: "deploy: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+# Sitemap configuration
+sitemap:
+  path: sitemap.xml
