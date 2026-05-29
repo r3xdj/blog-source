@@ -64,6 +64,6 @@ layout: page
   
   - 🛠️ Challenge: **Released**
   
-  - 📝 Official Writeup: ✒️**Writing**
+  - 📝 Official Writeup: [Eisenstein's RSA Official Writeup (簡要版) | R3X's Blog](http://r3xdj.github.io/blog/2026/05/29/Eisenstein-s-RSA-Official-Writeup/)
 
 - **難度:** Medium

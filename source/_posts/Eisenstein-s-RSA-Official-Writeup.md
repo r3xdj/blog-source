@@ -7,10 +7,13 @@ tags:
 categories:
   - Cyber
   - CTF Writeup
-cover: 
-top_img: 
 description: 在非整數環上的RSA題目
+date: 2026-05-29 16:03:17
+updated: 2026-05-29 16:03:17
+cover:
+top_img:
 ---
+
 
 # 題目資訊
 
