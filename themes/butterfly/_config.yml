@@ -1066,6 +1066,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    - <meta name="google-site-verification" content="5z-oWYZ9DQeeHLODT_ojriAiEbz6BTAn96ulQOkauhU" />
   bottom:
     # - <script src="xxxx"></script>
 
