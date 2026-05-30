@@ -1144,3 +1144,16 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 10
+  hub:
+  content:
+  content_limit: 250
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
