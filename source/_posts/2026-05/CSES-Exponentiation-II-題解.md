@@ -7,10 +7,13 @@ categories:
   - OI
   - CSES
   - Mathematics
+cover: /img/cses.jpg
+top_img: /img/cses.jpg
+date: 2026-05-31 22:37:40
+updated: 2026-05-31 22:37:40
 description:
-cover:
-top_img:
 ---
+
 
 > 本題會用到上次在[***CSES Exponentiation 題解 | R3X's Blog***](/2026/05/31/CSES-Exponentiation-%E9%A1%8C%E8%A7%A3/)講到的東西，並假設讀者都已看過。
 
@@ -49,22 +52,22 @@ const int M = (int)1e9 + 7;
 #define ll long long
 
 ll fast_pow(ll base, ll exp, int m){
-	ll res = 1LL;
-	while(exp > 0){
-		if(exp%2==1){res = (res*base) % m;}
-		base = (base*base) % m;
-		exp /= 2;
-	}
-	return res;
+  ll res = 1LL;
+  while(exp > 0){
+    if(exp%2==1){res = (res*base) % m;}
+    base = (base*base) % m;
+    exp /= 2;
+  }
+  return res;
 }
 
 int main(){
-	ios::sync_with_stdio(0), cin.tie(0);
-	ll n, a, b, c;
-	cin >> n;
-	while(n--){
-		cin >> a >> b >> c;
-		cout << fast_pow(a, fast_pow(b,c,M-1),M) << "\n";
-	}
+  ios::sync_with_stdio(0), cin.tie(0);
+  ll n, a, b, c;
+  cin >> n;
+  while(n--){
+    cin >> a >> b >> c;
+    cout << fast_pow(a, fast_pow(b,c,M-1),M) << "\n";
+  }
 }
 ```

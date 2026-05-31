@@ -10,8 +10,8 @@ categories:
 date: 2026-05-31 21:30:11
 updated: 2026-05-31 21:30:11
 description:
-cover:
-top_img:
+cover: /img/cses.jpg
+top_img: /img/cses.jpg
 ---
 
 

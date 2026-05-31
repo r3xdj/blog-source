@@ -8,8 +8,8 @@ categories:
   - CSES
   - Mathematics
 description:
-cover:
-top_img:
+cover: /img/cses.jpg
+top_img: /img/cses.jpg
 ---
 
 > 我把這題想的太複雜了
