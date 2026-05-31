@@ -7,8 +7,8 @@ categories:
   - OI
   - CSES
   - Mathematics
-cover: /img/cses.jpg
-top_img: /img/cses.jpg
+cover: /img/CSES.jpg
+top_img: /img/CSES.jpg
 date: 2026-05-31 22:37:40
 updated: 2026-05-31 22:37:40
 description:
