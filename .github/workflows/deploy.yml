@@ -33,4 +33,3 @@ jobs:
           external_repository: r3xdj/r3xdj.github.io
           publish_dir: ./public
           publish_branch: main
-          destination_dir: /
