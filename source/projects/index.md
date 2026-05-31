@@ -34,7 +34,7 @@ layout: page
 - **Challenge Repo:** [r3xdj/file-manager-challs](https://github.com/r3xdj/file-manager-challs)
 - **題目狀態:**
   - 🛠️ Challenge: **Released**
-  - 📝 Official Writeup: [File Manager Official Writeup | R3X's Blog](https://r3xdj.github.io/blog/2026/05/27/File-Manager-Official-Writeup/)
+  - 📝 Official Writeup: [File Manager Official Writeup | R3X's Blog](/2026/05/27/File-Manager-Official-Writeup/)
 - **難度：**
   - **File Manager 1:** Easy
   - **File Manager 2:** Hard
@@ -49,7 +49,7 @@ layout: page
 - **Challenge Repo:** [r3xdj/FindMySize-chall](https://github.com/r3xdj/FindMySize-chall)
 - **題目狀態:**
   - 🛠️ Challenge: **Released**
-  - 📝 Official Writeup: [Find My Size Official Writeup | R3X's Blog](http://r3xdj.github.io/blog/2026/05/28/Find-My-Size-Official-Writeup/)
+  - 📝 Official Writeup: [Find My Size Official Writeup | R3X's Blog](/2026/05/28/Find-My-Size-Official-Writeup/)
 - **難度：** Medium
 
 ### 🔐 Crypto
@@ -64,6 +64,6 @@ layout: page
   
   - 🛠️ Challenge: **Released**
   
-  - 📝 Official Writeup: [Eisenstein's RSA Official Writeup (簡要版) | R3X's Blog](http://r3xdj.github.io/blog/2026/05/29/Eisenstein-s-RSA-Official-Writeup/)
+  - 📝 Official Writeup: [Eisenstein's RSA Official Writeup (簡要版) | R3X's Blog](/2026/05/29/Eisenstein-s-RSA-Official-Writeup/)
 
 - **難度:** Medium
