@@ -87,7 +87,7 @@ $$
 C_k=\frac{\mathrm{num}}{\mathrm{den}}\Rightarrow\mathrm{den}\cdot C_k=\mathrm{num}
 $$
 
-接著兩邊同時mod $(10^9+7)$，假設模完他變成$AC_k\equiv B\pmod{10^9+7}$，那麼$C_k\equiv a^{-1}b\pmod{10^9+7}$
+接著兩邊同時mod $(10^9+7)$，假設模完他變成$AC_k\equiv B\pmod{10^9+7}$，那麼$C_k\equiv A^{-1}B\pmod{10^9+7}$
 
 所以我們還需要寫一個用來求模反元素的函式。
 
