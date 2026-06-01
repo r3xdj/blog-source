@@ -24,6 +24,7 @@ menu:
   Tags: /tags/ || fas fa-tags
   Projects: /projects/ || fas fa-code
   About: /about/ || fas fa-user
+  RSS: /atom.xml || fas fa-rss
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
@@ -34,8 +35,8 @@ menu:
 
 code_blocks:
   # Code block theme: darker / pale night / light / ocean / false
-  theme: light
-  macStyle: false
+  theme: pale night
+  macStyle: true
   # Code block height limit (unit: px)
   height_limit: 450
   word_wrap: false
@@ -59,7 +60,7 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /img/icy_star.ico
+favicon: /img/icon.ico
 
 avatar:
   img: /img/icy_star.png
@@ -1154,6 +1155,6 @@ feed:
   content_limit: 250
   content_limit_delim: ' '
   order_by: -date
-  icon: icon.png
+  icon: icy_star.png
   autodiscovery: true
   template:
