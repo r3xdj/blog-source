@@ -3,6 +3,7 @@ title: CSES - Counting Divisors 題解
 tags:
   - C++
   - math
+  - sieve
 categories:
   - OI
   - CSES
