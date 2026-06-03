@@ -144,9 +144,204 @@ $$
 
 顯然是$\Theta(N)$。
 
-# 解法三：
+# 解法三：建質數表，再用標準分解式求因數個數
 
+這個是我的解法，但很醜。我的想法是先建一個質數表，再看$x$分別被每個質數整除幾次(即$\nu_p(x)$)
+則所求為
+$$
+\sum\limits_{i}(\nu_{p_i}(x)+1)
+$$
+
+> 如果你不知道為什麼，請去問你高一數學老師
+
+## 作法
+
+### 質數表：埃拉托斯特尼篩法
+
+篩質數一個快速又簡單的方法就是我們國一就學過的**埃拉托斯特尼篩法**
+程式碼如下：
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+const int MAX_X = 1e6;
+
+bool not_prime[MAX_X + 1] = {1,1};
+int prime[MAX_X + 1];
+int cnt = 0;
+
+void make_prime_list(){
+  int N = MAX_X;
+  for(int i=2;i<=N;i++){
+    if(!not_prime[i]){
+      prime[++cnt] = i;
+      for(int j=2*i;j<=N;j+=i) not_prime[j] = 1;
+    }
+  }
+}
+
+bool is_prime(int x){return !not_prime[x];}
+```
+
+其複雜度為$O(N\log\log N)$(好像要用到Mertens' Theorems，所以我不會證)
+
+> 耶我終於能自己直接寫出埃氏篩了
+
+### $\nu_p(x)$
+
+計算$\nu_p(x)$的函式如下：
+
+```cpp
+int v(int p, ll &x){ // v代表\nu
+  int ans = 0;
+  while(x%p==0){
+    x /= p;
+    ans += 1;
+  }
+  return ans;
+}
+```
+
+之所以用`&x`是為了讓這個函式能修改外部參數(也就是直接動態修改傳進去的$x$的值)，`&x`表示傳遞變數`x`的記憶體地址，而非單純複製其值。
+單次執行的時間複雜度為$O(\log_p(x))$
+
+### `divnum`
+
+計算正因數個數
+
+```cpp
+ll divnum(ll x){
+  if(x==0)return 0;
+  if(x==1)return 1;
+  ll ans = 1;
+  for(int i=1;i<=cnt;i++){
+    int p = prime[i];
+    if(1LL*p*p>x)break;
+    ans *= v(p,x)+1;
+  }
+  if(x>1)ans *= (1+1);
+  return ans;
+}
+```
+
+這邊解釋一下`if(x>1)ans *= (1+1);`這行。迴圈跳出時代表$x$不再有小於$\sqrt{x}$的正因數，這表示要嘛$x=1$，不然就是$x$本身就是一個質數。所以如果$x>1$，就代表$x=某質數^1$，故對正因數個數貢獻為$\times(1+1)$。
+
+複雜度的部分，跑迴圈要時$O(\pi(\sqrt{x}))=O(\frac{\sqrt{x}}{\ln\sqrt{x}})$，而所有的$\nu_p(x)$呼叫加總不超過$O(\log_2{x})$，又不難證明
+$$
+\lim{x\to\infty}{\frac{\log_2{x}}{\frac{\sqrt{x}}{\ln\sqrt{x}}}}=0
+$$
+因此總複雜度為
+$$
+O(\frac{\sqrt{x}}{\ln\sqrt{x}})
+$$
+
+
+## AC Code
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+const int MAX_X = 1e6;
+
+bool not_prime[MAX_X + 1];
+int prime[MAX_X + 1];
+int cnt = 0;
+
+void make_prime_list(){
+  int N = MAX_X;
+  for(int i=2;i<=N;i++){
+    if(!not_prime[i]){prime[++cnt] = i;}
+    for(int j=1;j<=cnt;j++){
+      int p = prime[j];
+      if(1LL*i*p>N) break;
+      not_prime[i*p] = 1;
+      if(i%p == 0)break;
+    }
+  }
+  return;
+}
+
+bool is_prime(int x){return !not_prime[x];}
+
+int v(int p, ll &x){ // v代表\nu
+  int ans = 0;
+  while(x%p==0){
+    x /= p;
+    ans += 1;
+  }
+  return ans;
+}
+
+ll divnum(ll x){
+  if(x==0)return 0;
+  if(x==1)return 1;
+  ll ans = 1;
+  for(int i=1;i<=cnt;i++){
+    int p = prime[i];
+    if(1LL*p*p>x)break;
+    ans *= v(p,x)+1;
+  }
+  if(x>1)ans *= (1+1);
+  return ans;
+}
+
+int main(){
+  ios::sync_with_stdio(0), cin.tie(0);
+  int n;
+  cin >> n;
+  make_prime_list();
+  while(n--){
+    int x;
+    cin >> x;
+    cout << divnum(x) << "\n";
+  }
+}
+```
+
+## 複雜度
+
+### 時間複雜度
+
+$$
+O\left(N \log \log N + Q \cdot \frac{\sqrt{x_{\max}}}{\log \sqrt{x_{\max}}}\right)
+$$
+
+### 空間複雜度
+
+$$
+\Theta(n)
+$$
+
+> 真的很醜
 
 # 解法四：
 
+來源：[【題解】CSES 1713 Counting Divisors – Yui Huang 演算法學習筆記](https://yuihuang.com/cses-1713/)
+想法：ㄧ樣是用標準分解式，但在預處理時將`not_prime`中的值改為紀錄該數的**最大質因數**
+
+## AC Code
+
+## 複雜度
+
+### 時間複雜度
+
+### 空間複雜度
+
 # 解法五：線性篩求積性函數
+這是裡面時間複雜度最低的做法，達到了驚人的
+
+## 線性篩
+
+## AC Code
+
+## 複雜度
+
+### 時間複雜度
+
+### 空間複雜度
+
+# 後記
