@@ -13,8 +13,8 @@ cover: /img/CSES.jpg
 top_img: /img/CSES.jpg
 ---
 
-> 我把這題想的太複雜了
-> 但這題真的可以很深
+> 我把這題想太複雜了……
+> 弄了個爛解
 
 # 題目
 
@@ -187,8 +187,6 @@ bool is_prime(int x){return !not_prime[x];}
 
 其複雜度為$O(N\log\log N)$(好像要用到Mertens' Theorems，所以我不會證)
 
-> 耶我終於能自己直接寫出埃氏篩了
-
 ### $\nu_p(x)$
 
 計算$\nu_p(x)$的函式如下：
@@ -254,15 +252,11 @@ int cnt = 0;
 void make_prime_list(){
   int N = MAX_X;
   for(int i=2;i<=N;i++){
-    if(!not_prime[i]){prime[++cnt] = i;}
-    for(int j=1;j<=cnt;j++){
-      int p = prime[j];
-      if(1LL*i*p>N) break;
-      not_prime[i*p] = 1;
-      if(i%p == 0)break;
+    if(!not_prime[i]){
+      prime[++cnt] = i;
+      for(int j=2*i;j<=N;j+=i) not_prime[j] = 1;
     }
   }
-  return;
 }
 
 bool is_prime(int x){return !not_prime[x];}
@@ -388,19 +382,18 @@ $$
 
 # 解法五：線性篩求積性函數
 
-這是裡面時間複雜度最低的做法，十分驚人
-> 我搞了好久才弄懂……
+想法：用線性篩+動態規劃建表，把所有答案先都算出來
 
-來源：[筛法 - OI Wiki](https://oi-wiki.org/math/number-theory/sieve/#%E7%AD%9B%E6%B3%95%E6%B1%82%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0)
 
-## 線性篩
 
 ## AC Code
+
 
 ## 複雜度
 
 ### 時間複雜度
 
 ### 空間複雜度
+
 
 # 後記
