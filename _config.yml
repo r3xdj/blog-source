@@ -124,4 +124,3 @@ deploy:
 # Sitemap configuration
 sitemap:
   path: sitemap.xml
-  
