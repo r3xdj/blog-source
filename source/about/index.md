@@ -25,6 +25,11 @@ Hi，我是 R3X DJ
 <div class="timeline">
 
 <div class="timeline-item">
+  <div class="time">2026/06</div>
+  <div class="content">ISIP-HS CTF 第14名 @單身狗防火牆</div>
+</div>
+
+<div class="timeline-item">
   <div class="time">2026/02</div>
   <div class="content">THJCC CTF 學生賽區 第23名</div>
 </div>
@@ -41,7 +46,7 @@ Hi，我是 R3X DJ
 
 <div class="timeline-item">
   <div class="time">2025/05</div>
-  <div class="content">AIS3 Pre-exam CTF（第166名）</div>
+  <div class="content">AIS3 Pre-exam CTF 第166名</div>
 </div>
 
 <div class="timeline-item">
