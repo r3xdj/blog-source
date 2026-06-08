@@ -1,4 +1,0 @@
-{
-    "pasteImage.path": "${currentFileNameWithoutExt}",
-    "pasteImage.insertPattern": "![](${imageFileName})"
-}
