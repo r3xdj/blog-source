@@ -26,7 +26,7 @@ Hi，我是 R3X DJ
 
 <div class="timeline-item">
   <div class="time">2026/06</div>
-  <div class="content">ISIP-HS CTF 第14名 @單身狗防火牆</div>
+  <div class="content">ISIP-HS CTF (學生隊伍)第10名 @單身狗防火牆</div>
 </div>
 
 <div class="timeline-item">

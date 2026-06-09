@@ -126,7 +126,7 @@ sudo apt install -y foremost # kali-linux-everything有
 - volatility3
 https://pypi.org/project/volatility3/
 ```bash
-pipx install volatility3
+pipx install git+https://github.com/volatilityfoundation/volatility3.git
 ```
 
 ## zip-cen-op (zip偽加密工具)
