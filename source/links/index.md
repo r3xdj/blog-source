@@ -12,6 +12,12 @@ layout: page
 
 </div>
 
+<center>
+<details>
+<summary>⬇️ 申請**添加友鏈 / 把我加到你的友鏈**說明 ⬇️</summary>
+
+<div style="text-align: left;">
+
 > 格式：
 > ```yaml
 >     - name: 
@@ -19,3 +25,16 @@ layout: page
 >       avatar: 
 >       descr: 
 > ```
+
+> 如果你想把我加進你的友鏈(那我會很開心XD)，以下是資訊：
+> ```yaml
+>     - name: R3X DJ
+>       link: https://r3xdj.github.io/
+>       avatar: https://r3xdj.github.io/img/icy_star.png
+>       descr: 對不起我都在 Vibe Hacking
+> ```
+
+</div>
+
+</details>
+</center>
