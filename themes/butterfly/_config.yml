@@ -23,6 +23,7 @@ menu:
   Categories: /categories/ || fas fa-folder-open
   Tags: /tags/ || fas fa-tags
   Projects: /projects/ || fas fa-code
+  Links: /links/ || fas fa-link
   About: /about/ || fas fa-user
   RSS: /atom.xml || fas fa-rss
   # List||fas fa-list:

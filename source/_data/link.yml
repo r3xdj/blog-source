@@ -1,0 +1,11 @@
+- class_name: <center><h1>👥 Friends</h1></center>
+  class_desc: 
+  link_list:
+    - name: 老祖
+      link: https://huiink.github.io/
+      avatar: https://huiink.github.io/avatar.webp
+      descr: 保障每天三小時的睡眠
+    - name: PGpenguin72
+      link: https://pg72.tw/
+      avatar: https://pg72.tw/avatar.png
+      descr: 是一隻企鵝喔
