@@ -1,7 +1,7 @@
 ---
 title: Kali Linux Setup For CTF
 date: 2025-04-06 07:54:17
-updated: 2025-02-13 11:20:00
+updated: 2026-06-09 11:32:42
 categories: 
   - Cyber
 tags:
@@ -21,6 +21,7 @@ sudo apt full-upgrade -y
 sudo kali-tweaks
 ```
 接著選擇需要的元件，可以直接選`kali-linux-everything`全裝
+> 但這空間也是占有點多，還是要考慮一下w
 
 # General
 ```bash=
@@ -77,6 +78,7 @@ nvim
 sudo apt install fonts-arphic-uming fonts-noto-cjk -y
 #裝框架、輸入法
 sudo apt install fcitx5 fcitx5-chewing zenity im-config -y
+sudo  apt install fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 fcitx5-frontend-qt5 fcitx5-frontend-qt6 -y
 #設定
 sudo im-config
 ```
