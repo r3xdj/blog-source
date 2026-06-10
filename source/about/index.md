@@ -20,6 +20,23 @@ Hi，我是 R3X DJ
 
 # 🧭 Timeline
 
+## 🪪 Certificate
+
+<div class="timeline">
+
+<div class="timeline-item">
+  <div class="time">2026/03</div>
+  <div class="content">APCS 觀念4 / 實作2 <span class="about-tag about-tag-dev">Dev</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2024/08</div>
+  <div class="content">中華民國紅十字會 急救員 </div>
+</div>
+
+</div>
+
+
 ## 🏆 Competition
 
 <div class="timeline">
@@ -37,6 +54,21 @@ Hi，我是 R3X DJ
 <div class="timeline-item">
   <div class="time">2026/02</div>
   <div class="content">TISF 數學科 四等獎 <span class="about-tag about-tag-math">Math</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2026/02</div>
+  <div class="content">台灣數奧(TMO) 參賽 <span class="about-tag about-tag-math">Math</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2026/01</div>
+  <div class="content">數奧初選第二階段 PR89.9 <span class="about-tag about-tag-math">Math</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2025/11</div>
+  <div class="content">數奧初選第一階段 PR97.5 <span class="about-tag about-tag-math">Math</span></div>
 </div>
 
 <div class="timeline-item">
@@ -59,6 +91,21 @@ Hi，我是 R3X DJ
   <div class="content">臺北市第58屆中小學科展 數學科 特優 <span class="about-tag about-tag-math">Math</span></div>
 </div>
 
+<div class="timeline-item">
+  <div class="time">2025/02</div>
+  <div class="content">物奧複選 PR57 <span class="about-tag about-tag-phy">Physics</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2024/11</div>
+  <div class="content">物奧初選 PR89 <span class="about-tag about-tag-phy">Physics</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2024/03</div>
+  <div class="content">徐有庠盃-第十六屆台灣青年學生物理辯論競賽 參賽 <span class="about-tag about-tag-phy">Physics</span></div>
+</div>
+
 </div>
 
 ## 🎈 Activity
@@ -76,12 +123,21 @@ Hi，我是 R3X DJ
 </div>
 
 <div class="timeline-item">
-  <div class="time">2025/01、2024/11</div>
-  <div class="content">CVE 漏洞實作工坊 <span class="about-tag about-tag-cyber">Cyber</span></div>
+  <div class="time">2025/04~2025/06</div>
+  <div class="content">SCINT 2025 資訊安全基礎能力課程 助教 <span class="about-tag about-tag-cyber">Cyber</span><span class="about-tag about-tag-dev">Dev</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2025/03</div>
+  <div class="content">資所未見 四校資訊社團聯合工作坊 學員 <span class="about-tag about-tag-cyber">Cyber</span><span class="about-tag about-tag-dev">Dev</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2024/11、2025/01</div>
+  <div class="content">SCINT CVE 漏洞實作工坊 學員 <span class="about-tag about-tag-cyber">Cyber</span></div>
 </div>
 
 </div>
-
 
 ## 📦 Projects
 
