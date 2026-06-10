@@ -8,13 +8,14 @@ layout: page
 
 <div style="text-align: center;">
 
-申請加友鏈的表單 / 留言區我還沒弄，目前要的話可以私訊我或直接發 PR 改 [`source/_data/link.yml`](https://github.com/r3xdj/blog-source/edit/main/source/_data/link.yml) (這是連結可以直接點)
-
 </div>
 
 <div style="text-align: center;">
 <details>
 <summary>⬇️ 申請添加友鏈 / 把我加到你的友鏈說明 ⬇️</summary>
+
+申請加友鏈請在底下留言，格式如下方。
+或者你可以直接發 PR 改 [`source/_data/link.yml`](https://github.com/r3xdj/blog-source/edit/main/source/_data/link.yml) (這是連結可以直接點)
 
 <div style="text-align: left;">
 
