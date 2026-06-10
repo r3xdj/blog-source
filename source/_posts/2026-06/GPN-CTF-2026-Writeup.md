@@ -8,10 +8,13 @@ tags:
 categories:
   - Cyber
   - CTF Writeup
-description:
 cover: goulash.png
 top_img: cover.png
+date: 2026-06-10 20:26:51
+updated: 2026-06-10 20:26:51
+description:
 ---
+
 
 
 因為考上台大了，這個暑假打算上CTFtime上找一些比賽來打。本來想說畢業當周周末來打這個GPN CTF 2026，結果開賽前突然看到零日餅乾社裡傳一個ISIP-HS CTF，比賽時間包含這個GPN CTF，結果就變成GPN CTF只解了兩三題(還簡單題XD)(都在打ISIP-HS CTF)。
@@ -96,7 +99,28 @@ __int64 check_recipe_length()
 }
 ```
 
-我們點進去`TARGET_LENGTH`可以看到他的數值為`3Dh`，轉成10進位就是61
+我們分析
+
+```c
+RECIPE[TARGET_LENGTH] || (result = (unsigned __int8)RECIPE[TARGET_LENGTH - 1], !(_BYTE)result)
+```
+
+這個判斷式的意思。
+前半段檢查是否`RECIPE[TARGET_LENGTH] != 0`。由於C的字串結尾會填入`\0`
+後半段用了`,`運算符，代表先執行前面的`result = (unsigned __int8)RECIPE[TARGET_LENGTH - 1]`，再用`!(_BYTE)result`進行判斷，
+即檢查是否`result == 0`。因此上面那串等價於：
+
+```c
+RECIPE[TARGET_LENGTH] != '\0'
+|| // OR
+RECIPE[TARGET_LENGTH-1] == '\0'
+```
+
+而`RECIPE`是用fget讀入，因此字串結尾會是`\n\0`
+
+而我們點進去`TARGET_LENGTH`可以看到他的數值為`3Dh`，轉成10進位就是61。
+因此我們需要輸入長度為60的字串(加上`'\n'`剛好61個字)
+即Flag的長度為60
 
 ## salt
 ```c
@@ -117,9 +141,8 @@ __int64 salt()
 }
 ```
 
-GRAIN_OF_SALT = 0AAh
-salt()：將每個字都和0xAA XOR
-
+這串程式碼表示將字串中的每個字(包括最後的`\n`和`\0`，還有字串後面(因為雖然字串結束了，但`RECIPE`(或說`FOOD`)陣列大小為64，還沒結束)陣列初始化時的兩個`\0`)和`GRAIN_OF_SALT` XOR
+點進去可發現`GRAIN_OF_SALT`的值為`0AAh`，即0xAA
 
 ## fry
 
@@ -141,8 +164,26 @@ __int64 fry()
 }
 ```
 
-fry()：交換高低位
-如0xED變成0xDE
+依樣是對每個字操作，操作為以下這句：
+
+```c
+*((_BYTE *)&FOOD + i) = (*((_BYTE *)&FOOD + i) >> 4) | (16 * *((_BYTE *)&FOOD + i));
+```
+
+我們先令`unsigned char x = *((_BYTE *)&FOOD + i);`，則上面那段程式碼變為：
+
+```c
+x = ( x >> 4 ) | ( 16 * x )
+```
+
+`x >> 4`會取出x的高4位
+`16 * x`相當於`x << 4`，又一個char只有8bits，因此多出來的4bits會直接被捨棄
+
+比如若`x = 0x10111001`
+`x >> 4` 為 0x00001011
+`16 * x` 為 0x10010000
+
+因此這個函式的功能是交換每個字的高4bits和低4bits，如0xED變成0xDE。
 
 ## trim
 
@@ -164,7 +205,10 @@ __int64 trim()
 }
 ```
 
-trim()：刪掉末三個數的高位 
+for迴圈從`i = TARGET_LENGTH`，即`0x3D`開始，
+而和0xFu (u代表unsigned int) AND 表示刪除高4bits。
+因此此函式功能為：刪掉末三個數的高位 
+因此
 0xAA 0xAA 0xAA --> 0x0A 0x0A 0x0A
 
 ## mix
@@ -196,7 +240,7 @@ __int64 mix()
 }
 ```
 
-mix()：整串顛倒
+把FOOD整串顛倒。
 
 ## taste
 
@@ -225,7 +269,9 @@ __int64 taste()
 }
 ```
 
-我們只要把四個步驟逆著推回去就好
+檢查是否`FOOD`中每一位都跟`DELICIOUS`中的相同。
+
+因此，我們只要取出`DELICIOUS`的值，並把四個步驟逆著推回去就好。
 
 ## exploit
 ```python
@@ -256,3 +302,9 @@ for i in range(64):
 
 print("".join( chr(h) for h in delicious))
 ```
+
+執行後拿到
+Flag: `GPNCTF{I_Feel_lIK3_Y0u_4RE_RE4Dy_fOR_oUr_H4RD35T_d1shes_NOw}`
+
+以下為AutoCooker執行畫面，可以此觀察字串的變化：
+![autocooker](2026-06-10-20-23-43.png)
