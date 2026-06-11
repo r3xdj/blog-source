@@ -8,10 +8,14 @@ categories:
   - OI
   - CSES
   - Mathematics
-description:
 cover: /img/CSES.jpg
 top_img: /img/CSES.jpg
+date: 2026-06-11 13:23:35
+updated: 2026-06-11 13:23:35
+description:
 ---
+
+
 
 > 我把這題想太複雜了……
 > 弄了個爛解
@@ -134,7 +138,7 @@ int main() {
 $$
 \Theta(N\sum_{k=1}^{N}{\frac{1}{k}})=\Theta(N\log{N})
 $$
-而查詢故需要$\Theta(n)$，$n\leq N$
+而查詢需要$\Theta(n)$，$n\leq N$
 所以總複雜度為
 $$
 \Theta(N\log{N})
@@ -149,7 +153,7 @@ $$
 這個是我的解法，但很醜。我的想法是先建一個質數表，再看$x$分別被每個質數整除幾次(即$\nu_p(x)$)
 則所求為
 $$
-\sum\limits_{i}(\nu_{p_i}(x)+1)
+\prod\limits_{i}(\nu_{p_i}(x)+1)
 $$
 
 > 如果你不知道為什麼，請去問你高一數學老師
@@ -245,7 +249,7 @@ using namespace std;
 
 const int MAX_X = 1e6;
 
-bool not_prime[MAX_X + 1];
+bool not_prime[MAX_X + 1] = {1,1};
 int prime[MAX_X + 1];
 int cnt = 0;
 
@@ -383,17 +387,7 @@ $$
 # 解法五：線性篩求積性函數
 
 想法：用線性篩+動態規劃建表，把所有答案先都算出來
+請見[\[演算法\] 線性篩 | R3X's Blog](/2026/06/11/%E6%BC%94%E7%AE%97%E6%B3%95-%E7%B7%9A%E6%80%A7%E7%AF%A9/#%25E7%25B7%259A%25E6%2580%25A7%25E7%25AF%25A9%25E6%25B1%2582%25E6%25AD%25A3%25E5%259B%25A0%25E6%2595%25B8%25E5%2580%258B%25E6%2595%25B8)
 
-
-
-## AC Code
-
-
-## 複雜度
-
-### 時間複雜度
-
-### 空間複雜度
-
-
-# 後記
+這我也是打很久……
+若有誤歡迎留言指正！
