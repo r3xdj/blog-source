@@ -43,7 +43,12 @@ Hi，我是 R3X DJ
 
 <div class="timeline-item">
   <div class="time">2026/06</div>
-  <div class="content">ISIP-HS CTF (學生隊伍)第10名 @單身狗防火牆 <span class="about-tag about-tag-cyber">Cyber</span></div>
+  <div class="content">boroCTF HS Division @ RCEs <span class="about-tag about-tag-cyber">Cyber</span></div>
+</div>
+
+<div class="timeline-item">
+  <div class="time">2026/06</div>
+  <div class="content">ISIP-HS CTF 學生隊伍 第10名 @ 單身狗防火牆 <span class="about-tag about-tag-cyber">Cyber</span></div>
 </div>
 
 <div class="timeline-item">
@@ -119,7 +124,7 @@ Hi，我是 R3X DJ
 
 <div class="timeline-item">
   <div class="time">2025/05</div>
-  <div class="content">北區高中職程式安全黑客松 <span class="about-tag about-tag-cyber">Cyber</span></div>
+  <div class="content">北區高中職程式安全黑客松 程式守護獎 @ 第10組 <span class="about-tag about-tag-cyber">Cyber</span></div>
 </div>
 
 <div class="timeline-item">
